@@ -66,7 +66,7 @@ The currently active key is highlighted, and a blink selects it.
 3. Download `shape_predictor_68_face_landmarks.dat`
 4. Run the main Python script
 
-Ensure your webcam is connected before running the program.
+### note: You can watch the demo video in asset/"project demo" or else visit the external link.
 
 ---
 
