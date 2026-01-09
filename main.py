@@ -235,11 +235,10 @@ def getGazeRatio(eyePoints, facialLandmarks):
 
 
 # Iterators and Counters
-framesCount = 0
+letterIndex = 0
 blinkingFramesCount = 0
-
-letterSelectorCount = 5 #frames_active_letter
-framesToBlink = 5
+framesToBlink = 6
+letterSelectorCount = 8 #frames_active_letter
 
 letterIndex = 0
 
@@ -252,7 +251,7 @@ keyboardSelectionFramesCount = 0
 exitToBoard = False
 while True:
     if exitToBoard:
-        cv2.imshow("Board", board)
+        cv2.imshow("White Board", board)
         key = cv2.waitKey(1)
         if key == 27:   # ESC to fully exit
             break
@@ -348,7 +347,7 @@ while True:
                 selectedKeyboard = "left"
                 keyboardSelectionFramesCount += 1
                 
-                if keyboardSelectionFramesCount == 25:
+                if keyboardSelectionFramesCount == 15:
                     menuSelected = False
                     lsound.play()
                     time.sleep(1)
@@ -364,7 +363,7 @@ while True:
                 selectedKeyboard="right"
                 keyboardSelectionFramesCount += 1
                 
-                if keyboardSelectionFramesCount == 25: #limmit to select kb
+                if keyboardSelectionFramesCount == 15: #limmit to select kb
                     menuSelected = False
                     rsound.play()
                     time.sleep(1)
@@ -380,7 +379,7 @@ while True:
                 selectedKeyboard="centre"
                 keyboardSelectionFramesCount += 1
                 
-                if keyboardSelectionFramesCount == 25: #limmit to select kb
+                if keyboardSelectionFramesCount == 15: #limmit to select kb
                     menuSelected = False
                     csound.play()
                     time.sleep(1)
@@ -418,7 +417,7 @@ while True:
                         text += " "
                     elif selectedLetter == "[x]":
                         cap.release()
-                        cv2.destroyWindow("Frame")
+                        cv2.destroyWindow("Face Frame")
                         cv2.destroyWindow("Virtual Keyboard")
                         exitToBoard = True
 
@@ -454,19 +453,18 @@ while True:
     # cv2.rectangle(frame,(0, y1),(cols, y2),BORDER_COLOR,BORDER_THICKNESS)
         
     if not exitToBoard:
-        cv2.imshow("Frame", frame)
+        cv2.imshow("Face Frame", frame)
         cv2.imshow("Virtual Keyboard", keyboard)
-        # Position windows (once)
-        cv2.moveWindow("Frame", 1450, 0)
+        cv2.moveWindow("Face Frame", 1450, 0)
         cv2.moveWindow("Virtual Keyboard", 380, 0)
         
 
-    cv2.imshow("Board", board)
-    cv2.moveWindow("Board", 0, 820)
+    cv2.imshow("White Board", board)
+    cv2.moveWindow("White Board", 0, 820)
     
     key = cv2.waitKey(1)
     if key == 27:
         break
     
 cap.release()
-cv2.destroyWindow("Board")
+cv2.destroyWindow("White Board")
