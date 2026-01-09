@@ -1,65 +1,76 @@
-### Eye Gaze Controlled Virtual Keyboard
+# Eye Gaze Controlled Virtual Keyboard
 
-A computer vision based virtual keyboard that allows users to **type using eye gaze direction and blinking**, designed to assist hands-free interaction and accessibility use cases.
-
-This project uses **facial landmark detection**, **eye gaze estimation**, and **blink detection** to enable text input without any physical keyboard.
+A computer vision based virtual keyboard that allows users to type using eye gaze direction and blinking.  
+This project is designed for hands-free interaction and accessibility focused applications.
 
 ---
 
-## 🚀 Features
+## Features
 
-- 👀 **Eye gaze based navigation**
-  - Look **left**, **centre**, or **right** to select keyboard region.
-- 👁️ **Blink to select**
-  - Blink to confirm a character.
-- ⌨️ **Three virtual keyboards**
-  - Left (A–M + symbols)
-  - Centre (Numbers & operators)
-  - Right (N–Z + symbols)
-- 🧾 **Live writing board**
-  - Typed text appears on a white board
-- 📊 **Blink loading bar**
-  - Visual feedback while blinking
-- 🔊 **Audio feedback**
-  - Sounds on letter selection and keyboard switching
-- 🪟 **Multiple windows**
+- Eye gaze based navigation (Left, Centre, Right)
+- Blink to confirm key selection
+- Three virtual keyboards:
+  - Left: A–M and symbols
+  - Centre: Numbers and operators
+  - Right: N–Z and symbols
+- Live writing board for typed text
+- Visual blink loading bar for feedback
+- Audio feedback for key and keyboard selection
+- Multiple windows:
   - Face frame
   - Virtual keyboard
   - Writing board
 
 ---
 
-## 🧠 How It Works
+## How It Works
 
-### 1️⃣ Face & Eye Detection
-- Uses **dlib’s 68 facial landmarks** to locate eyes
-- Tracks eye regions in real time
+### Face and Eye Detection
+Uses dlib’s 68 facial landmark predictor to detect facial features and accurately locate eye regions in real time.
 
-### 2️⃣ Gaze Estimation
-- Compares white pixel distribution in left vs right eye
-- Determines gaze direction:
-  - Left
-  - Centre
-  - Right
+### Gaze Estimation
+Eye gaze direction is determined by comparing white pixel distribution between the left and right halves of the eye region.  
+This allows classification into left, centre, or right gaze.
 
-### 3️⃣ Blink Detection
-- Eye Aspect Ratio (EAR) based blink detection
-- Sustained blink confirms key selection
+### Blink Detection
+Blinking is detected using Eye Aspect Ratio (EAR).  
+A sustained blink is used as a confirmation signal to select characters.
 
-### 4️⃣ Virtual Keyboard Logic
-- Keyboard auto-cycles through keys
-- Current key is highlighted
-- Blink selects the highlighted key
+### Virtual Keyboard Logic
+The keyboard automatically cycles through keys.  
+The currently active key is highlighted, and a blink selects it.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-- **Python**
-- **OpenCV**
-- **dlib**
-- **NumPy**
-- **pygame** (for audio feedback)
+- Python
+- OpenCV
+- dlib
+- NumPy
+- pygame (audio feedback)
 
 ---
 
+## Use Cases
+
+- Assistive typing for users with motor disabilities
+- Hands-free human-computer interaction
+- Computer vision based HCI research projects
+
+---
+
+## Setup Instructions
+
+1. Clone the repository
+2. Install dependencies
+3. Download `shape_predictor_68_face_landmarks.dat`
+4. Run the main Python script
+
+Ensure your webcam is connected before running the program.
+
+---
+
+## Disclaimer
+
+This project requires good lighting conditions for accurate eye tracking as the gaze ration are according to my camera.
