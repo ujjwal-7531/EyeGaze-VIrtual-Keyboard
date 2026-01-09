@@ -470,9 +470,9 @@ while True:
     )
         
     if not exitToBoard:
-        cv2.imshow("Frame", frame)
+        cv2.imshow("Face Frame", frame)
         cv2.imshow("Virtual Keyboard", keyboard)
-    cv2.imshow("Board", board)
+    cv2.imshow("White Board", board)
     
     key = cv2.waitKey(1)
     if key == 27:
