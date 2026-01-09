@@ -56,7 +56,6 @@ The currently active key is highlighted, and a blink selects it.
 
 - Assistive typing for users with motor disabilities
 - Hands-free human-computer interaction
-- Computer vision based HCI research projects
 
 ---
 
