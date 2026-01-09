@@ -241,8 +241,8 @@ def getGazeRatio(eyePoints, facialLandmarks):
 framesCount = 0
 letterIndex = 0
 blinkingFramesCount = 0
-framesToBlink = 10
-letterSelectorCount = 10 #frames_active_letter
+framesToBlink = 6
+letterSelectorCount = 8 #frames_active_letter
 
 text = ""
 selectedKeyboard = "left"
@@ -345,7 +345,7 @@ while True:
                 selectedKeyboard = "left"
                 keyboardSelectionFramesCount += 1
                 
-                if keyboardSelectionFramesCount == 25:
+                if keyboardSelectionFramesCount == 15:
                     menuSelected = False
                     lsound.play()
                     time.sleep(1)
@@ -361,7 +361,7 @@ while True:
                 selectedKeyboard="right"
                 keyboardSelectionFramesCount += 1
                 
-                if keyboardSelectionFramesCount == 25: #limmit to select kb
+                if keyboardSelectionFramesCount == 15: #limmit to select kb
                     menuSelected = False
                     rsound.play()
                     time.sleep(1)
@@ -377,7 +377,7 @@ while True:
                 selectedKeyboard="centre"
                 keyboardSelectionFramesCount += 1
                 
-                if keyboardSelectionFramesCount == 25: #limmit to select kb
+                if keyboardSelectionFramesCount == 15: #limmit to select kb
                     menuSelected = False
                     csound.play()
                     time.sleep(1)
@@ -479,4 +479,4 @@ while True:
         break
     
 cap.release()
-cv2.destroyWindow("Board")
+cv2.destroyWindow("White Board")
