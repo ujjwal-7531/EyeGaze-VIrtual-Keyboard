@@ -1,6 +1,5 @@
 import cv2
 import dlib
-import mediapipe as mp
 
 import numpy as np
 import math 
@@ -234,7 +233,8 @@ def getGazeRatio(eyePoints, facialLandmarks):
 
 
 
-# Iterators and Counters
+# Iterators and 
+framesCount = 0
 letterIndex = 0
 blinkingFramesCount = 0
 framesToBlink = 6
