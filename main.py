@@ -14,10 +14,10 @@ cap = cv2.VideoCapture(0) #captures video from webcam
 
 # Audio Setup
 pygame.mixer.init()
-select = pygame.mixer.Sound("select.wav")
-lsound = pygame.mixer.Sound("left.wav")
-rsound = pygame.mixer.Sound("right.wav")
-csound = pygame.mixer.Sound("centre.wav")
+select = pygame.mixer.Sound("sounds/select.wav")
+lsound = pygame.mixer.Sound("sounds/left.wav")
+rsound = pygame.mixer.Sound("sounds/right.wav")
+csound = pygame.mixer.Sound("sounds/centre.wav")
 
 # Writing Board (white background)
 board = np.zeros((270, 1800), dtype=np.uint8)
@@ -25,7 +25,7 @@ board[:] = 255
 
 # Using the dlib library to use the 68 facial landmarks
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor("model/shape_predictor_68_face_landmarks.dat")
 
 # Virtual Keyboard
 keyboard = np.zeros((600, 1050, 3), dtype=np.uint8) # height, width, color-channels    150, 210
